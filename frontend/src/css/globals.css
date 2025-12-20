@@ -1,0 +1,14 @@
+/**
+ * Global Styles - Base and Fonts
+ * Ensures consistency and clean typography.
+ */
+
+/* Import a clean, modern, and legible font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Apply the font and basic styles to the root */
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

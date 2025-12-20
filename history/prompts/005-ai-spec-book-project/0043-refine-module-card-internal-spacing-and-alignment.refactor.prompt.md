@@ -1,0 +1,79 @@
+--- 
+id: 0043
+title: Refine module card internal spacing and alignment
+stage: refactor
+date: 2025-12-07
+surface: agent
+model: gemini-1.5-flash-latest
+feature: 005-ai-spec-book-project
+branch: master
+user: Aamir Tariq
+command: '🤖 ROS 2 Nervous System
+New
+Master the communication backbone of robotics. Learn about ROS 2 fundamentals, rclpy bridge for Python, and building humanoid URDF models.
+
+🌍 Digital Twin Simulation
+Explore virtual environments for robotics. Understand Gazebo physics, Unity rendering, and advanced sensor integration techniques.
+
+🧠 AI-Robot Brain (Isaac Sim)
+Delve into NVIDIA Isaac Sim for realistic simulation, Isaac ROS VSLAM for perception, and Nav2 for humanoid navigation.
+
+🗣️ Vision-Language-Action (VLA)
+Hot
+Uncover how robots understand and act. From Whisper speech recognition to LLM planning and capstone projects.
+
+this text is give correct padding and do which you like if you think if somthing is missing
+'
+labels: ["docusaurus", "css", "cards", "spacing", "alignment"]
+links:
+  spec: null
+  ticket: null
+  adr: null
+  pr: null
+files:
+  - frontend/src/css/custom.css
+tests:
+--- 
+
+## Prompt
+
+🤖 ROS 2 Nervous System
+New
+Master the communication backbone of robotics. Learn about ROS 2 fundamentals, rclpy bridge for Python, and building humanoid URDF models.
+
+🌍 Digital Twin Simulation
+Explore virtual environments for robotics. Understand Gazebo physics, Unity rendering, and advanced sensor integration techniques.
+
+🧠 AI-Robot Brain (Isaac Sim)
+Delve into NVIDIA Isaac Sim for realistic simulation, Isaac ROS VSLAM for perception, and Nav2 for humanoid navigation.
+
+🗣️ Vision-Language-Action (VLA)
+Hot
+Uncover how robots understand and act. From Whisper speech recognition to LLM planning and capstone projects.
+
+this text is give correct padding and do which you like if you think if somthing is missing
+
+## Response snapshot
+
+Successfully modified file: C:\Users\Aamir Tariq\Desktop\AI BOOK BY HUMAN\frontend\src\css\custom.css (1 replacements).
+Successfully modified file: C:\Users\Aamir Tariq\Desktop\AI BOOK BY HUMAN\frontend\src\css\custom.css (1 replacements).
+Successfully modified file: C:\Users\Aamir Tariq\Desktop\AI BOOK BY HUMAN\frontend\src\css\custom.css (1 replacements).
+Successfully modified file: C:\Users\Aamir Tariq\Desktop\AI BOOK BY HUMAN\frontend\src\css\custom.css (1 replacements).
+Successfully modified file: C:\Users\Aamir Tariq\Desktop\AI BOOK BY HUMAN\frontend\src\css\custom.css (1 replacements).
+Successfully modified file: C:\Users\Aamir Tariq\Desktop\AI BOOK BY HUMAN\frontend\src\css\custom.css (1 replacements).
+Successfully modified file: C:\Users\Aamir Tariq\Desktop\AI BOOK BY HUMAN\frontend\src\css\custom.css (1 replacements).
+
+## Outcome
+
+- ✅ Impact: Refined internal spacing and alignment within module cards (`.card__header`, `.card__body`) by applying flexbox properties and adjusting padding, ensuring module names, badges, and descriptions are properly positioned.
+- 🧪 Tests: No automated tests were run. Manual verification by starting Docusaurus server is required.
+- 📁 Files: `frontend/src/css/custom.css` (modified).
+- 🔁 Next prompts: User will verify the changes.
+- 🧠 Reflection: Successfully addressed user's feedback regarding vertical alignment and spacing within module cards by making targeted CSS adjustments.
+
+## Evaluation notes (flywheel)
+
+- Failure modes observed: 
+- Graders run and results (PASS/FAIL): 
+- Prompt variant (if applicable): 
+- Next experiment (smallest change to try): 

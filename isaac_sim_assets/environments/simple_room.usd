@@ -1,0 +1,41 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1.0
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def "env"
+    {
+        def "groundPlane"
+        {
+            float3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+
+            def Mesh "plane"
+            {
+                float3[] extent = [(-5, -5, 0), (5, 5, 0)]
+                float2[] texCoords = [(0, 0), (1, 0), (1, 1), (0, 1)] (
+                    interpolation = "faceVarying"
+                )
+                int[] faceVertexCounts = [4]
+                int[] faceVertexIndices = [0, 1, 2, 3]
+                point3f[] points = [(-5, -5, 0), (5, -5, 0), (5, 5, 0), (-5, 5, 0)]
+                
+                def Material "material"
+                {
+                    token outputs:surface.connect = </World/env/groundPlane/plane/material/PBR.outputs:surface>
+
+                    def Shader "PBR"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.5, 0.5, 0.5)
+                        token outputs:surface
+                    }
+                }
+            }
+        }
+    }
+}

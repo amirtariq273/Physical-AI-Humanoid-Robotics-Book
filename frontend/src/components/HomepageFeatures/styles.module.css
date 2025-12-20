@@ -1,0 +1,87 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+}
+
+@media screen and (max-width: 996px) {
+  .features {
+    padding: 3rem 0;
+  }
+
+  .featureSvg {
+    height: 150px;
+    width: 150px;
+  }
+
+  .col {
+    margin-top: 3rem; /* Increased margin to separate cards */
+    border: 1px solid var(--ifm-contents-border-color);
+    padding: 1.5rem;
+    border-radius: 12px; /* Match the card border-radius */
+  }
+
+  .col .text--center {
+    text-align: left; /* Left-align text for better readability */
+  }
+
+  .col .text--center h3 {
+    font-size: 1.5rem;
+  }
+
+  .col .text--center p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .features {
+    padding: 2.5rem 0;
+  }
+
+  .featureSvg {
+    height: 120px;
+    width: 120px;
+  }
+
+  .col {
+    margin-top: 2.5rem; /* Increased margin to separate cards */
+  }
+
+  .col .text--center h3 {
+    font-size: 1.3rem;
+  }
+
+  .col .text--center p {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .features {
+    padding: 2rem 0;
+  }
+
+  .featureSvg {
+    height: 100px;
+    width: 100px;
+  }
+
+  .col {
+    margin-top: 2rem; /* Increased margin to separate cards */
+  }
+
+  .col .text--center h3 {
+    font-size: 1.2rem;
+  }
+
+  .col .text--center p {
+    font-size: 0.8rem;
+  }
+}

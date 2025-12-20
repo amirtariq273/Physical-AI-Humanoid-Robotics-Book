@@ -1,0 +1,30 @@
+# RViz configuration for sensor display
+#
+# To use: rviz2 -d src/module2_gazebo_examples/rviz_config/sensor_display.rviz
+
+Views:
+  Current:
+    Class: rviz_default_plugins/Views/Orbit
+    Target Frame: base_link
+    Theta: 1.3
+    Phi: 0.9
+    Distance: 5
+Global Options:
+  Fixed Frame: base_link
+Visualizers:
+  - Class: rviz_default_plugins/PointCloud2
+    Name: Lidar Scan
+    Topic: /lidar_scan
+    Color: 255; 0; 0
+    Style: Points
+    Size (Pixels): 3
+  - Class: rviz_default_plugins/Image
+    Name: Depth Image
+    Topic: /depth_image
+  - Class: rviz_default_plugins/Imu
+    Name: IMU
+    Topic: /imu_data
+    Color: 0; 255; 0
+    Show Orientation: true
+    Show Acceleration: true
+    Show Angular Velocity: true

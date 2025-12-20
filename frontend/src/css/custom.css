@@ -1,0 +1,503 @@
+/**
+ * Custom CSS for Docusaurus
+ *
+ * Professional Theme: Clean, modern, and tech-inspired.
+ * Palette: Professional green shades.
+ */
+
+/* ========================================================= */
+/*    COLOR VARIABLES    */
+/* ========================================================= */
+:root {
+  --ifm-color-primary: #50c878; /* Emerald Green */
+  --ifm-color-primary-dark: #40a060;
+  --ifm-color-primary-darker: #388e54;
+  --ifm-color-primary-darkest: #307c48;
+  --ifm-color-primary-light: #60e090;
+  --ifm-color-primary-lighter: #70f8a8;
+  --ifm-color-primary-lightest: #80ffc0;
+
+  --ifm-background-color: #0f172a; /* Dark blue background */
+  --ifm-background-surface-color: #1e293b; /* Lighter surface color */
+
+  --ifm-font-color-base: #e2e8f0; /* Light gray for text */
+  --ifm-font-color-secondary: #94a3b8;
+
+  --ifm-contents-border-color: #334155;
+}
+
+html[data-theme='dark'] {
+  --ifm-color-primary: #50c878;
+  --ifm-background-color: #0f172a;
+  --ifm-background-surface-color: #1e293b;
+  --ifm-font-color-base: #e2e8f0;
+  --ifm-font-color-secondary: #94a3b8;
+  --ifm-contents-border-color: #334155;
+}
+
+html[data-theme='light'] {
+  --ifm-color-primary: #32CD32; /* Lime Green - very vibrant */
+  --ifm-color-primary-dark: #228B22;
+  --ifm-color-primary-darker: #1C6B1C;
+  --ifm-color-primary-darkest: #154F15;
+  --ifm-color-primary-light: #66FF66;
+  --ifm-color-primary-lighter: #99FF99;
+  --ifm-color-primary-lightest: #CCFFCC;
+
+  --ifm-background-color: #e0f2f7; /* A light, calming blue-green */
+  --ifm-background-surface-color: #ffffff; /* Pure white for contrast */
+
+  --ifm-font-color-base: #2c3e50; /* A dark, deep blue for excellent readability */
+  --ifm-font-color-secondary: #7f8c8d; /* A muted gray for secondary text */
+
+  --ifm-contents-border-color: #bdc3c7; /* A soft gray for borders */
+}
+
+/* ========================================================= */
+/*     NAVBAR    */
+/* ========================================================= */
+.navbar {
+  background-color: var(--ifm-background-surface-color);
+  border-bottom: 1px solid var(--ifm-contents-border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme='light'] .navbar {
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-light)); /* Eye-catching gradient */
+  border-bottom: 1px solid var(--ifm-contents-border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+}
+
+/* Adjust text color for navbar links in light mode to ensure readability */
+html[data-theme='light'] .navbar__link,
+html[data-theme='light'] .navbar__title,
+html[data-theme='light'] .navbar__item a {
+  color: white; /* White text for contrast against colorful navbar */
+}
+
+/* Adjust hero section for light mode */
+html[data-theme='light'] .hero {
+  background: linear-gradient(135deg, var(--ifm-color-primary-lightest), var(--ifm-background-color)); /* Light linear gradient using primary colors */
+}
+
+html[data-theme='light'] .hero__title {
+  color: var(--ifm-font-color-base); /* Dark text for readability */
+}
+
+html[data-theme='light'] .hero__subtitle {
+  color: var(--ifm-font-color-secondary); /* Dark text for readability */
+}
+
+
+
+.navbar__link {
+  font-weight: 500;
+  color: var(--ifm-font-color-base);
+}
+
+.navbar__brand:hover {
+  filter: drop-shadow(0 0 10px var(--ifm-color-primary)); /* Glow effect on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  transition: all 0.3s ease-in-out;
+}
+
+/* ========================================================= */
+/*    HERO SECTION    */
+/* ========================================================= */
+.hero {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  padding: 8rem 0; /* Increased vertical padding */
+  text-align: center;
+  overflow: hidden; /* Hide overflow for animations */
+}
+
+.hero__title {
+  font-size: 4.5rem; /* Increased font size */
+  font-weight: 800;
+  color: #ffffff;
+  animation: fadeInDown 1s ease-in-out; /* Add a subtle animation */
+  margin-bottom: 1rem; /* Added space between title and subtitle */
+  transform: translateY(-20px);
+}
+
+.hero__subtitle {
+  font-size: 1.75rem; /* Increased font size */
+  color: var(--ifm-font-color-secondary);
+  animation: fadeInUp 1s ease-in-out; /* Add a subtle animation */
+}
+
+.hero__developer {
+  font-size: 1rem;
+  color: var(--ifm-color-primary);
+  margin-top: 6rem; /* Increased margin to push it further down */
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px var(--ifm-color-primary);
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  animation: pulse 2s infinite;
+}
+
+.hero__developer span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(100%, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 10px var(--ifm-color-primary);
+  }
+  50% {
+    text-shadow: 0 0 20px var(--ifm-color-primary-light);
+  }
+  100% {
+    text-shadow: 0 0 10px var(--ifm-color-primary);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================================= */
+/*                          BUTTONS                          */
+/* ========================================================= */
+.button {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.button--primary {
+  background-image: linear-gradient(45deg, var(--ifm-color-primary-dark), var(--ifm-color-primary-light));
+  background-size: 200% auto;
+  color: #ffffff;
+  border: none;
+}
+
+.button--primary:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.button--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.5s;
+}
+
+.button--primary:hover::before {
+  left: 100%;
+}
+
+.button--secondary {
+  background-color: transparent;
+  color: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary);
+}
+
+.button--secondary:hover {
+  background-color: var(--ifm-color-primary);
+  color: #ffffff;
+  box-shadow: 0 0 15px var(--ifm-color-primary);
+}
+
+/* Custom styles for the "Get Started" button */
+.button--get-started {
+  font-size: 1rem;
+  padding: 0.8rem 1.8rem;
+  background-image: linear-gradient(45deg, var(--ifm-color-primary-dark), var(--ifm-color-primary));
+  color: white;
+  border: none;
+  box-shadow: 0 5px 15px rgba(80, 200, 120, 0.3);
+  transition: all 0.3s ease;
+}
+
+.button--get-started:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(80, 200, 120, 0.5);
+  background-image: linear-gradient(45deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
+}
+
+.button--signup {
+  margin-right: 1rem; /* Spacing between sign-up and color mode switch */
+  background-color: var(--ifm-color-primary-light); /* Slightly different shade to stand out */
+  box-shadow: 0 4px 10px rgba(80, 200, 120, 0.4); /* Eye-catching shadow */
+  transform: scale(1);
+}
+
+.button--signup:hover {
+  background-color: var(--ifm-color-primary-dark); /* Darker on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 4px 10px rgba(80, 200, 120, 0.5); /* Less pronounced shadow */
+  color: #ffffff; /* Ensure text remains white on hover */
+}
+
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+  background-color: var(--ifm-background-color);
+}
+
+/* ========================================================= */
+/*                          CARDS                          */
+/* ========================================================= */
+.card {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-image: linear-gradient(45deg, var(--ifm-color-primary), var(--ifm-color-primary-dark)) 1;
+}
+
+.card__header {
+  background-color: transparent;
+  border-bottom: 1px solid var(--ifm-contents-border-color);
+}
+
+.card__title {
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+/* ========================================================= */
+/*                         FOOTER                            */
+/* ========================================================= */
+.footer {
+  background-color: #0f172a;
+  border-top: 1px solid var(--ifm-contents-border-color);
+}
+
+.footer__copyright {
+  color: var(--ifm-color-primary); /* Green color for copyright text */
+}
+
+/* ========================================================= */
+/*                     RESPONSIVE STYLES                     */
+/* ========================================================= */
+
+@media screen and (max-width: 996px) {
+  /* General mobile adjustments */
+  .hero {
+    padding: 6rem 0; /* Adjusted padding for smaller screens */
+  }
+
+  .hero__title {
+    font-size: 2.5rem; /* Adjusted title size for smaller screens */
+  }
+
+  .hero__subtitle {
+    font-size: 1.2rem; /* Adjusted subtitle size for smaller screens */
+  }
+
+  .card {
+    margin-bottom: 2rem;
+  }
+
+  /* Footer adjustments */
+  .footer > .container > .row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer div {
+    text-align: center !important;
+  }
+
+  .footer .row {
+    justify-content: center;
+  }
+
+  .footer .col {
+    text-align: center !important;
+  }
+
+  .footer__title {
+    text-align: center;
+  }
+
+  .footer__links {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .footer__links ul {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer__item {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .footer__item a {
+    display: block;
+    width: 100%;
+    text-align: center !important;
+  }
+
+  /* Navbar adjustments */
+  .navbar__items--right {
+    display: flex;
+    align-items: center;
+    order: 1; /* Ensure this group is ordered correctly if other items exist */
+    position: absolute; /* Position relative to the navbar */
+    right: 0.3rem; /* Closest to the hamburger */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000; /* Ensure it's on top */
+  }
+
+  /* Hide default right-side items, except the ones we explicitly manage */
+  .navbar__items--right .navbar__item:not(.colorMode_node_modules-@docusaurus-theme-classic-lib-theme-Navbar-ColorModeToggle-styles-module):not(.button--signup) {
+    display: none !important;
+  }
+
+  /* Ensure signup button is visible and positioned */
+  .navbar .button--signup {
+    display: block !important;
+    visibility: visible !important;
+    order: 1; /* Place before the toggle */
+    padding: 0.4rem 0.5rem;
+    font-size: 0.8rem;
+    background-color: var(--ifm-color-primary); /* Solid primary color */
+    color: white; /* Ensure text is white */
+    box-shadow: none; /* Remove shadow for cleaner look */
+    margin-right: 0.5rem; /* Spacing between signup and toggle */
+    position: static !important; /* Override any absolute positioning */
+    transform: none !important;
+    top: auto !important;
+    right: auto !important;
+  }
+
+  /* Remove hover effects for signup button on mobile if they create unwanted "light shade" */
+  .navbar .button--signup:hover {
+    background-color: var(--ifm-color-primary) !important; /* Keep original background, or set to transparent if needed */
+    box-shadow: none !important; /* Remove any hover shadow */
+    transform: none !important; /* Remove any hover transform */
+  }
+
+  /* Make the color mode toggle visible and positioned to the right of the signup button */
+  .colorMode_node_modules-@docusaurus-theme-classic-lib-theme-Navbar-ColorModeToggle-styles-module {
+    display: block !important;
+    visibility: visible !important;
+    order: 2; /* Place after the signup button */
+    position: static !important; /* Override any absolute positioning */
+    transform: none !important;
+    top: auto !important;
+    right: auto !important;
+  }
+
+  /* Mobile navbar title adjustments */
+  .navbar__title {
+    font-size: 0; /* Hide the original text */
+  }
+  .navbar__title::after {
+    content: "AI & Robotics"; /* The shorter title for mobile */
+    font-size: 1.2rem; /* Set the font size for the shorter title */
+  }
+
+  /* Signup Form Container */
+  .signup-form-container {
+    max-width: 90% !important;
+    padding: 15px !important;
+  }
+
+  .signup-form-container .form-note {
+    padding: 0.8rem !important;
+  }
+}
+
+/* Specific styles for very small screens (phones) */
+@media screen and (max-width: 480px) {
+  .hero {
+    padding: 8rem 0;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.25rem;
+  }
+
+  .button--get-started {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group .button {
+    margin-bottom: 1rem;
+  }
+}
+
+.modules-link-bold {
+  font-weight: bold !important;
+}
