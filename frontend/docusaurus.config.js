@@ -8,7 +8,7 @@ const config = {
   title: 'Physical AI & Humanoid Robotics',
   tagline:
     'Building the Future of Intelligent Robots, from foundational concepts to advanced, real-world applications.',
-  url: 'https://your-docusaurus-site.com',
+  url: 'https://physical-ai-humanoid-robotics-book-nu-ruby.vercel.app', // ✅ Correct deployment URL
   baseUrl: '/',
   onBrokenLinks: 'warn',
 
